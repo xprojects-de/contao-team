@@ -1,0 +1,55 @@
+<div class="ce_xprojects_team_overview <?= $this->class ?> block"<?= $this->cssID ?>>
+  <?php if (count($this->tags) > 0): ?>
+    <div class="tagcloud">
+      <ul>
+        <li><span class="tagselector tagall" data-tag="-"><?= $GLOBALS['TL_LANG']['projects_team']['tag_all'] ?></span></li>
+        <?php foreach ($this->tags as $tag): ?>
+          <li><span class="tagselector" data-tag="<?= $tag ?>"><?= $tag ?></span></li>
+        <?php endforeach ?>
+      </ul>
+    </div>
+  <?php endif; ?>
+  <div class="ce_xprojects_team_overview_clear"></div>
+  <?php if ($this->search == true): ?>
+    <div class="searchcontainer">
+      <input type="text" class="searchcontainer_inputtext" value="" placeholder="<?= $GLOBALS['TL_LANG']['projects_team']['searchlabel'] ?>">
+    </div>
+  <?php endif; ?>
+  <?php $lCounter = 0; ?>
+  <?php foreach ($this->data as $teammember): ?>
+    <div data-tags="<?= $teammember['tags'] ?>" data-search="<?= $teammember['name'] ?>" class="item" <?php if ($teammember['link'] != ''): ?> style="cursor:pointer;" onclick="location.href = '<?= $teammember['link'] ?>';" <?php endif; ?>>
+      <div class="item_inside c<?= ($lCounter % 2) ?>" style="position:relative;">
+        <div class="imagecontainer">
+          <?php if ($teammember['image']): ?>
+            <img class="lazy" data-src="<?= $teammember['image'] ?>" src="" alt="">
+          <?php endif ?>
+        </div>
+        <?php if ($teammember['name'] != ""): ?>
+          <div data-id="textcontainer_<?= $this->id ?>_<?= $lCounter ?>" class="textcontainer" style="position:absolute;top:0;left:0;">
+            <div class="textcontainer_inside">
+              <h3><?= $teammember['name'] ?></h3>
+              <p><?= $teammember['teaser'] ?></p>
+              <?php if ($teammember['link'] != ''): ?>
+                <a href="<?= $teammember['link'] ?>">[mehr]</a>
+              <?php endif; ?>
+            </div>
+          </div>
+        <?php endif; ?>
+        <?php if ($teammember['desc'] != ""): ?>
+          <div data-id="desccontainer_<?= $this->id ?>_<?= $lCounter ?>" class="desccontainer">
+            <div class="desccontainer_inside">
+              <h3><?= $teammember['name'] ?></h3>
+              <p><?= $teammember['teaser'] ?></p>
+              <p><?= $teammember['desc'] ?></p>
+              <?php if ($teammember['link'] != ''): ?>
+                <a href="<?= $teammember['link'] ?>">[mehr]</a>
+              <?php endif; ?>
+            </div>
+          </div>
+        <?php endif; ?>
+      </div>
+    </div>
+    <?php $lCounter++; ?>
+  <?php endforeach ?>
+  <div class="ce_xprojects_team_overview_clear"></div>
+</div>
