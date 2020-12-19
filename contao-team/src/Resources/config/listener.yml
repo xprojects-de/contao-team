@@ -1,0 +1,6 @@
+services:
+
+  team.listener.alpdeskfrontendediting.element:
+    class: XProjects\Team\Events\TeamAlpdeskFrontendViewListener
+    tags:
+      - { name: kernel.event_listener, event: alpdeskfrontendediting.element}

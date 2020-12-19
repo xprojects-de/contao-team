@@ -6,7 +6,7 @@
       var self = $(this);
       $(this).find('div.textcontainer').hide();
       if ('ontouchstart' in document.documentElement) {
-        //$(this).on('touchend', function () {
+
         $(this).on('click', function () {
 
           var current = self.find('div.textcontainer');
@@ -18,29 +18,11 @@
           current.css('height', self.find('div.imagecontainer').first().height() + "px");
           current.fadeToggle(150);
 
-          var currentDesc = self.find('div.desccontainer');
-          $("div.desccontainer").each(function (index) {
-            if ($(this).attr('data-id') !== currentDesc.attr('data-id')) {
-              $(this).hide();
-            }
-          });
-          currentDesc.css('height', self.find('div.imagecontainer').first().height() + "px");
-          currentDesc.fadeToggle(150);
-
         });
       } else {
         $(this).hover(function () {
           self.find('div.textcontainer').css('height', self.find('div.imagecontainer').first().height() + "px");
           self.find('div.textcontainer').stop(true).fadeToggle(150);
-        });
-        $(this).on('click', function () {
-          var currentDesc = self.find('div.desccontainer');
-          $("div.desccontainer").each(function (index) {
-            if ($(this).attr('data-id') !== currentDesc.attr('data-id')) {
-              $(this).hide();
-            }
-          });
-          currentDesc.fadeToggle(150);
         });
       }
     });

@@ -4,7 +4,6 @@ $GLOBALS['TL_LANG']['tl_xprojects_team']['name'] = array('Name', 'Gebn sie einen
 $GLOBALS['TL_LANG']['tl_xprojects_team']['teaser'] = array('Teaser', 'Bitte geben sie den Teaser ein');
 $GLOBALS['TL_LANG']['tl_xprojects_team']['published'] = array('veröffentlichen', '');
 $GLOBALS['TL_LANG']['tl_xprojects_team']['mainimage'] = array('Bild', 'Wählen sie ein Bild aus');
-$GLOBALS['TL_LANG']['tl_xprojects_team']['desc'] = array('Beschreibung', 'Geben sie optional eine Beschreibung ein.');
 $GLOBALS['TL_LANG']['tl_xprojects_team']['detailpage'] = array('Detailseite', 'Wählen sie optional eine Detailseite ein.');
 $GLOBALS['TL_LANG']['tl_xprojects_team']['tags'] = array('Tags (kommasepariert)', 'Geben sie kommaseparierte Tags ein.');
 

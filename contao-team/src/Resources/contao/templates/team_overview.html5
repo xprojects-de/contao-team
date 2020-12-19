@@ -35,18 +35,6 @@
             </div>
           </div>
         <?php endif; ?>
-        <?php if ($teammember['desc'] != ""): ?>
-          <div data-id="desccontainer_<?= $this->id ?>_<?= $lCounter ?>" class="desccontainer">
-            <div class="desccontainer_inside">
-              <h3><?= $teammember['name'] ?></h3>
-              <p><?= $teammember['teaser'] ?></p>
-              <p><?= $teammember['desc'] ?></p>
-              <?php if ($teammember['link'] != ''): ?>
-                <a href="<?= $teammember['link'] ?>">[mehr]</a>
-              <?php endif; ?>
-            </div>
-          </div>
-        <?php endif; ?>
       </div>
     </div>
     <?php $lCounter++; ?>

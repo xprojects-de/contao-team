@@ -79,7 +79,7 @@ $GLOBALS['TL_DCA']['tl_xprojects_team'] = array
     ),
     'palettes' => array
         (
-        'default' => 'name,published;teaser;desc;mainimage;detailpage;tags'
+        'default' => 'name,published;teaser;mainimage;detailpage;tags'
     ),
     'fields' => array
         (
@@ -125,14 +125,6 @@ $GLOBALS['TL_DCA']['tl_xprojects_team'] = array
             'eval' => array('rte' => 'tinyMCE', 'tl_class' => 'clr'),
             'sql' => "mediumtext NULL"
         ),
-        'desc' => array
-            (
-            'label' => &$GLOBALS['TL_LANG']['tl_xprojects_team']['desc'],
-            'exclude' => true,
-            'inputType' => 'textarea',
-            'eval' => array('rte' => 'tinyMCE', 'tl_class' => 'clr'),
-            'sql' => "mediumtext NULL"
-        ),
         'mainimage' => array
             (
             'label' => &$GLOBALS['TL_LANG']['tl_xprojects_team']['mainimage'],
@@ -148,8 +140,7 @@ $GLOBALS['TL_DCA']['tl_xprojects_team'] = array
             'inputType' => 'pageTree',
             'foreignKey' => 'tl_page.title',
             'eval' => array('fieldType' => 'radio', 'tl_class' => 'clr', 'mandatory' => false),
-            'sql' => "int(10) unsigned NOT NULL default '0'",
-            'relation' => array('type' => 'hasOne', 'load' => 'eager')
+            'sql' => "int(10) unsigned NOT NULL default '0'"
         ),
         'tags' => array
             (

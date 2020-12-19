@@ -70,7 +70,6 @@ class Team extends \ContentElement {
             'id' => $teamsObj->id,
             'name' => $teamsObj->name,
             'teaser' => $teamsObj->teaser,
-            'desc' => $teamsObj->desc,
             'image' => $mainimage,
             'link' => $detailLInk,
             'tags' => implode(',', $tags)
